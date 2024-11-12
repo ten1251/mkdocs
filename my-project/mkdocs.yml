@@ -1,1 +1,15 @@
 site_name: Atomverse Console
+nav:
+  - Getting started: 
+    - Getting started: index.md
+    - Test: test.md
+  - Developer Guide: styleguide.md
+  - AR engine: arengine.md
+  - IVI: ivi.md
+  - Emulators: emulators.md
+theme: 
+ name: mkdocs
+ color_mode: light, dark, auto
+ default: dark
+ user_color_mode_toggle: dark
+ nav_style: dark
