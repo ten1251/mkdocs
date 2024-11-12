@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: MkDocs Build
+  # You may pin to the exact commit or the version.
+  # uses: romw314/mkdocs-action@77a4d52a44ebbfeed5ee7730d2a1bc817f769e8f
+  uses: romw314/mkdocs-action@v9
+  with:
+    # The path to the MkDocs configuration file
+    config-file: mkdocs.yml
+    # The directory to output the HTML site to, relative to workdir (see below)
+    output-dir: _site
+    # The root directory of your project (which contains the `docs` dir)
+    workdir: .
