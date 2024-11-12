@@ -24,16 +24,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
-      # Runs a single command using the runners shell
-      - name: MkDocs Build
+            - name: MkDocs Action
   # You may pin to the exact commit or the version.
-  # uses: romw314/mkdocs-action@77a4d52a44ebbfeed5ee7730d2a1bc817f769e8f
-  uses: romw314/mkdocs-action@v9
+  # uses: Tiryoh/actions-mkdocs@c9944d37d46488196a79d8d5e128c1d2af8f3d78
+  uses: Tiryoh/actions-mkdocs@v0.23.0
   with:
-    # The path to the MkDocs configuration file
-    config-file: mkdocs.yml
-    # The directory to output the HTML site to, relative to workdir (see below)
-    output-dir: _site
-    # The root directory of your project (which contains the `docs` dir)
-    workdir: .
+    # pip version of MkDocs
+    mkdocs_version: # optional, default is latest
+    # path to requirements.txt
+    requirements: # optional, default is requirements.txt
+    # path to mkdocs.yml
+    configfile: # optional, default is mkdocs.yml
+          
